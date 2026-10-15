@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mansoor's DevOps Engineer portfolio, focused on AWS, automation, cloud infrastructure, and CI/CD." />
+  <title>Mansoor | DevOps Engineer</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --card: #101a2c;
+      --blue: #38bdf8;
+      --purple: #818cf8;
+      --text: #f1f5f9;
+      --muted: #9caec5;
+      --border: #26354b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 13, 24, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 90px 0;
+    }
+
+    .tag {
+      color: var(--blue);
+      border: 1px solid #244965;
+      background: #0c2032;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5.5rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, var(--blue), var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .primary {
+      background: var(--blue);
+      color: #07111d;
+      border-color: var(--blue);
+    }
+
+    .secondary:hover {
+      background: var(--card);
+    }
+
+    /* General sections */
+    section {
+      padding: 80px 0;
+      scroll-margin-top: 70px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 650px;
+    }
+
+    .about-box,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .card:hover {
+      border-color: var(--blue);
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--blue);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .skill {
+      font-size: 0.82rem;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: #17263c;
+      color: #c7eaff;
+    }
+
+    /* Projects */
+    .project-number {
+      font-size: 2rem;
+      color: var(--purple);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* Contact */
+    .contact-box {
+      text-align: center;
+      padding: 45px 25px;
+      background: linear-gradient(135deg, #101a2c, #11152b);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 15px auto 25px;
+      max-width: 550px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        min-height: 70vh;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+        padding: 16px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Mansoor<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <span class="tag">AWS CLOUD · DEVOPS · AUTOMATION</span>
+
+      <h1>
+        Hi, I'm Mansoor.<br />
+        <span class="gradient">DevOps Engineer.</span>
+      </h1>
+
+      <p>
+        Aspiring DevOps Engineer passionate about AWS cloud,
+        automation, CI/CD pipelines, Linux, and containerization.
+        I enjoy learning how to build reliable infrastructure
+        and streamline software delivery.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#projects">Explore My Projects</a>
+        <a class="btn secondary" href="#contact">Get In Touch</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me<span class="gradient">.</span></h2>
+        <p class="section-subtitle">
+          Learning, building, automating, and improving every day.
+        </p>
+
+        <div class="about-box">
+          <p>
+            I'm Mansoor, an entry-level DevOps Engineer focused on
+            developing practical skills in AWS, Linux, Git, Docker,
+            CI/CD, and infrastructure automation. I am eager to apply
+            my knowledge through hands-on projects, solve technical
+            challenges, and contribute to a collaborative engineering
+            team. I'm committed to continuous learning and building
+            secure, scalable, and maintainable solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills<span class="gradient">.</span></h2>
+        <p class="section-subtitle">
+          Technologies I'm learning and developing hands-on experience with.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>AWS Cloud</h3>
+            <p>Cloud infrastructure and deployment fundamentals.</p>
+            <div class="skill-list">
+              <span class="skill">EC2</span>
+              <span class="skill">S3</span>
+              <span class="skill">IAM</span>
+              <span class="skill">VPC</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>CI/CD</h3>
+            <p>Automated software integration and delivery.</p>
+            <div class="skill-list">
+              <span class="skill">Git</span>
+              <span class="skill">GitHub</span>
+              <span class="skill">Jenkins</span>
+              <span class="skill">GitHub Actions</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Containers</h3>
+            <p>Packaging applications and understanding orchestration.</p>
+            <div class="skill-list">
+              <span class="skill">Docker</span>
+              <span class="skill">Kubernetes</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Linux & Scripting</h3>
+            <p>Command-line administration and task automation.</p>
+            <div class="skill-list">
+              <span class="skill">Linux</span>
+              <span class="skill">Bash</span>
+              <span class="skill">Shell Scripting</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Infrastructure as Code</h3>
+            <p>Learning repeatable and automated infrastructure provisioning.</p>
+            <div class="skill-list">
+              <span class="skill">Terraform</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Monitoring</h3>
+            <p>Learning application health and infrastructure observability.</p>
+            <div class="skill-list">
+              <span class="skill">CloudWatch</span>
+              <span class="skill">Logs</span>
+              <span class="skill">Metrics</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects<span class="gradient">.</span></h2>
+        <p class="section-subtitle">
+          Project ideas to implement, document, and showcase on GitHub.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="project-number">01</div>
+            <h3>AWS Static Website</h3>
+            <p>
+              Build and host a static portfolio website using
+              Amazon S3 and explore secure access and hosting options.
+            </p>
+            <div class="skill-list">
+              <span class="skill">AWS S3</span>
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+            </div>
+            <a class="project-link" href="#contact">Project details →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">02</div>
+            <h3>CI/CD Pipeline</h3>
+            <p>
+              Create a pipeline that builds, tests, and deploys
+              a sample application automatically when code changes.
+            </p>
+            <div class="skill-list">
+              <span class="skill">GitHub Actions</span>
+              <span class="skill">Docker</span>
+              <span class="skill">CI/CD</span>
+            </div>
+            <a class="project-link" href="#contact">Project details →</a>
+          </article>
+
+          <article class="card">
+            <div class="project-number">03</div>
+            <h3>AWS Infrastructure as Code</h3>
+            <p>
+              Use Terraform to define and manage a small AWS
+              environment with documented deployment steps.
+            </p>
+            <div class="skill-list">
+              <span class="skill">AWS</span>
+              <span class="skill">Terraform</span>
+              <span class="skill">Git</span>
+            </div>
+            <a class="project-link" href="#contact">Project details →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Let's Connect<span class="gradient">.</span></h2>
+          <p>
+            I'm looking for opportunities to learn, collaborate,
+            and grow as a DevOps Engineer. Feel free to connect with me.
+          </p>
+
+          <!-- Replace the example address with your real email. -->
+          <a class="btn primary"
+             href="mailto:YOUR_EMAIL@example.com">
+            Contact Me
+          </a>
+
+          <div class="skill-list" style="justify-content:center; margin-top:24px;">
+            <a class="skill" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a class="skill" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Mansoor. Built with passion for DevOps.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Smooth scrolling for internal navigation.
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
