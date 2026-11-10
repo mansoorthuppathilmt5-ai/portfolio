@@ -2,730 +2,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mansoor's DevOps Engineer portfolio, focused on AWS, automation, cloud infrastructure, and CI/CD." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Zone</title>
 
-  <title>Mansoor | DevOps Engineer</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <style>
-    :root {
-      --bg: #F5F7F2;
-      --card: #FFFFFF;
-      --blue: #26734D;
-      --purple: #69A982;
-      --text: #192B21;
-      --muted: #68766D;
-      --border: #E0E8DF;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f5;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+header {
+  background: #063d27;
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    body {
-      font-family: Inter, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+header h1 {
+  color: #8cff4f;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
-    .container {
-      width: min(1100px, 90%);
-      margin: auto;
-    }
+.hero {
+  background: linear-gradient(120deg,#063d27,#13804d);
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
 
-    /* Navigation */
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(245, 247, 242, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
+.hero p {
+  margin-bottom: 25px;
+}
 
-    nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.hero button {
+  background: #a5ff55;
+  border: none;
+  padding: 13px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--blue);
-    }
+.products {
+  padding: 50px 7%;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
+.products h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .nav-links a {
-      color: var(--muted);
-      transition: color 0.2s;
-    }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 25px;
+}
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 3px 12px #0001;
+}
 
-    /* Hero */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
 
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 90px 0;
-    }
+.card h3 {
+  margin: 15px 0;
+}
 
-    .tag {
-      color: var(--blue);
-      border: 1px solid #C7DDCE;
-      background: #E8F1E9;
-      padding: 7px 14px;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      margin-bottom: 24px;
-    }
+.price {
+  color: #087c40;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px;
+}
 
-    h1 {
-      font-size: clamp(2.7rem, 7vw, 5.5rem);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
+.card button {
+  background: #087c40;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .gradient {
-      background: linear-gradient(90deg, #26734D, #78AE85);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+.cart {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  margin: 30px 7%;
+  border-radius: 10px;
+}
 
-    .hero p {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
+footer {
+  background: #063d27;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .primary {
-      background: var(--blue);
-      color: #FFFFFF;
-      border-color: var(--blue);
-    }
-
-    .primary:hover {
-      background: #1D5C3D;
-    }
-
-    .secondary {
-      color: var(--blue);
-      border-color: #BFD4C3;
-    }
-
-    .secondary:hover {
-      background: #E8F1E9;
-    }
-
-    /* General Sections */
-
-    section {
-      padding: 80px 0;
-      scroll-margin-top: 70px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 12px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin-bottom: 36px;
-      max-width: 650px;
-    }
-
-    .about-box,
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 5px 20px rgba(28, 57, 38, 0.035);
-    }
-
-    .about-box p {
-      color: var(--muted);
-    }
-
-    /* Skills */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      transition: border-color 0.25s,
-                  transform 0.25s,
-                  box-shadow 0.25s;
-    }
-
-    .card:hover {
-      border-color: #8CB99A;
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(38, 115, 77, 0.09);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: var(--blue);
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 16px;
-    }
-
-    .skill {
-      font-size: 0.82rem;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background: #EAF2EA;
-      color: #286344;
-    }
-
-    /* Projects */
-
-    .project-number {
-      font-size: 2rem;
-      color: var(--purple);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .project-link {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--blue);
-      font-weight: 700;
-    }
-
-    .project-link:hover {
-      color: #69A982;
-    }
-
-    /* Contact */
-
-    .contact-box {
-      text-align: center;
-      padding: 45px 25px;
-      background: linear-gradient(135deg, #E8F1E9, #F4F6EF);
-      border: 1px solid #D5E3D6;
-      border-radius: 18px;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      margin: 15px auto 25px;
-      max-width: 550px;
-    }
-
-    /* Footer */
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-
-    @media (max-width: 760px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 0.85rem;
-      }
-
-      .hero {
-        min-height: 70vh;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        align-items: flex-start;
-        padding: 16px 0;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-      }
-
-      h1 {
-        letter-spacing: -1px;
-      }
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-
-  <header>
-    <nav class="container">
-
-      <a class="logo" href="#home">
-        Mansoor<span>.</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- Hero Section -->
-
-    <section class="hero container" id="home">
-
-      <span class="tag">
-        AWS CLOUD · DEVOPS · AUTOMATION
-      </span>
-
-      <h1>
-        Hi, I'm Mansoor.<br />
-        <span class="gradient">
-          DevOps Engineer.
-        </span>
-      </h1>
-
-      <p>
-        Aspiring DevOps Engineer passionate about AWS cloud,
-        automation, CI/CD pipelines, Linux, and containerization.
-        I enjoy learning how to build reliable infrastructure
-        and streamline software delivery.
-      </p>
-
-      <div class="buttons">
-
-        <a class="btn primary" href="#projects">
-          Explore My Projects
-        </a>
-
-        <a class="btn secondary" href="#contact">
-          Get In Touch
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- About Section -->
-
-    <section id="about">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          About Me<span class="gradient">.</span>
-        </h2>
-
-        <p class="section-subtitle">
-          Learning, building, automating, and improving every day.
-        </p>
-
-        <div class="about-box">
-
-          <p>
-            I'm Mansoor, an entry-level DevOps Engineer focused on
-            developing practical skills in AWS, Linux, Git, Docker,
-            CI/CD, and infrastructure automation. I am eager to apply
-            my knowledge through hands-on projects, solve technical
-            challenges, and contribute to a collaborative engineering
-            team. I'm committed to continuous learning and building
-            secure, scalable, and maintainable solutions.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- Skills Section -->
-
-    <section id="skills">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          Technical Skills<span class="gradient">.</span>
-        </h2>
-
-        <p class="section-subtitle">
-          Technologies I'm learning and developing hands-on experience with.
-        </p>
-
-        <div class="grid">
-
-          <article class="card">
-
-            <h3>AWS Cloud</h3>
-
-            <p>
-              Cloud infrastructure and deployment fundamentals.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">EC2</span>
-              <span class="skill">S3</span>
-              <span class="skill">IAM</span>
-              <span class="skill">VPC</span>
-            </div>
-
-          </article>
-
-          <article class="card">
-
-            <h3>CI/CD</h3>
-
-            <p>
-              Automated software integration and delivery.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">Git</span>
-              <span class="skill">GitHub</span>
-              <span class="skill">Jenkins</span>
-              <span class="skill">GitHub Actions</span>
-            </div>
-
-          </article>
-
-          <article class="card">
-
-            <h3>Containers</h3>
-
-            <p>
-              Packaging applications and understanding orchestration.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">Docker</span>
-              <span class="skill">Kubernetes</span>
-            </div>
-
-          </article>
-
-          <article class="card">
-
-            <h3>Linux & Scripting</h3>
-
-            <p>
-              Command-line administration and task automation.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">Linux</span>
-              <span class="skill">Bash</span>
-              <span class="skill">Shell Scripting</span>
-            </div>
-
-          </article>
-
-          <article class="card">
-
-            <h3>Infrastructure as Code</h3>
-
-            <p>
-              Learning repeatable and automated infrastructure provisioning.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">Terraform</span>
-            </div>
-
-          </article>
-
-          <article class="card">
-
-            <h3>Monitoring</h3>
-
-            <p>
-              Learning application health and infrastructure observability.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">CloudWatch</span>
-              <span class="skill">Logs</span>
-              <span class="skill">Metrics</span>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- Projects Section -->
-
-    <section id="projects">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          Featured Projects<span class="gradient">.</span>
-        </h2>
-
-        <p class="section-subtitle">
-          Project ideas to implement, document, and showcase on GitHub.
-        </p>
-
-        <div class="grid">
-
-          <article class="card">
-
-            <div class="project-number">01</div>
-
-            <h3>AWS Static Website</h3>
-
-            <p>
-              Build and host a static portfolio website using
-              Amazon S3 and explore secure access and hosting options.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">AWS S3</span>
-              <span class="skill">HTML</span>
-              <span class="skill">CSS</span>
-            </div>
-
-            <a class="project-link" href="#contact">
-              Project details →
-            </a>
-
-          </article>
-
-          <article class="card">
-
-            <div class="project-number">02</div>
-
-            <h3>CI/CD Pipeline</h3>
-
-            <p>
-              Create a pipeline that builds, tests, and deploys
-              a sample application automatically when code changes.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">GitHub Actions</span>
-              <span class="skill">Docker</span>
-              <span class="skill">CI/CD</span>
-            </div>
-
-            <a class="project-link" href="#contact">
-              Project details →
-            </a>
-
-          </article>
-
-          <article class="card">
-
-            <div class="project-number">03</div>
-
-            <h3>AWS Infrastructure as Code</h3>
-
-            <p>
-              Use Terraform to define and manage a small AWS
-              environment with documented deployment steps.
-            </p>
-
-            <div class="skill-list">
-              <span class="skill">AWS</span>
-              <span class="skill">Terraform</span>
-              <span class="skill">Git</span>
-            </div>
-
-            <a class="project-link" href="#contact">
-              Project details →
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- Contact Section -->
-
-    <section id="contact">
-
-      <div class="container">
-
-        <div class="contact-box">
-
-          <h2 class="section-title">
-            Let's Connect<span class="gradient">.</span>
-          </h2>
-
-          <p>
-            I'm looking for opportunities to learn, collaborate,
-            and grow as a DevOps Engineer. Feel free to connect with me.
-          </p>
-
-          <!-- Replace with your real email address -->
-
-          <a class="btn primary"
-             href="mailto:YOUR_EMAIL@example.com">
-            Contact Me
-          </a>
-
-          <div class="skill-list"
-               style="justify-content:center; margin-top:24px;">
-
-            <a class="skill"
-               href="https://github.com/"
-               target="_blank"
-               rel="noopener noreferrer">
-              GitHub
-            </a>
-
-            <a class="skill"
-               href="https://www.linkedin.com/"
-               target="_blank"
-               rel="noopener noreferrer">
-              LinkedIn
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-
-  <footer>
-
-    <div class="container">
-
-      <p>
-        © <span id="year"></span> Mansoor.
-        Built with passion for DevOps.
-      </p>
-
+<header>
+  <h1>⚽ Football Zone</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#cart">Cart 🛒</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>WELCOME TO FOOTBALL ZONE</h2>
+  <p>Your One-Stop Football Shopping Store</p>
+  <button onclick="document.getElementById('products').scrollIntoView()">
+    Shop Now
+  </button>
+</section>
+
+<section class="products" id="products">
+  <h2>Our Football Products</h2>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img src="https://placehold.co/300x200?text=Football+Jersey">
+      <h3>Football Jersey</h3>
+      <p class="price">₹799</p>
+      <button onclick="addCart('Football Jersey',799)">
+        Add to Cart
+      </button>
     </div>
 
-  </footer>
+    <div class="card">
+      <img src="https://placehold.co/300x200?text=Football+Boots">
+      <h3>Football Boots</h3>
+      <p class="price">₹1999</p>
+      <button onclick="addCart('Football Boots',1999)">
+        Add to Cart
+      </button>
+    </div>
 
-  <!-- JavaScript -->
+    <div class="card">
+      <img src="https://placehold.co/300x200?text=Football">
+      <h3>Football</h3>
+      <p class="price">₹599</p>
+      <button onclick="addCart('Football',599)">
+        Add to Cart
+      </button>
+    </div>
 
-  <script>
+    <div class="card">
+      <img src="https://placehold.co/300x200?text=Goalkeeper+Gloves">
+      <h3>Goalkeeper Gloves</h3>
+      <p class="price">₹899</p>
+      <button onclick="addCart('Goalkeeper Gloves',899)">
+        Add to Cart
+      </button>
+    </div>
 
-    // Automatically update copyright year
+  </div>
+</section>
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+<section class="cart" id="cart">
+  <h2>🛒 Shopping Cart</h2>
+  <div id="cartItems">Your cart is empty</div>
+  <h3 id="total">Total: ₹0</h3>
+</section>
 
-    // Smooth scrolling for internal navigation
+<footer>
+  <p>© 2026 Football Zone | All Rights Reserved</p>
+</footer>
 
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+<script>
+let cart = [];
 
-      link.addEventListener("click", (event) => {
+function addCart(name, price) {
+  cart.push({name, price});
+  updateCart();
+}
 
-        const target = document.querySelector(
-          link.getAttribute("href")
-        );
+function updateCart() {
+  let items = document.getElementById("cartItems");
+  let total = 0;
 
-        if (target) {
+  items.innerHTML = "";
 
-          event.preventDefault();
+  cart.forEach((item, index) => {
+    total += item.price;
 
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+    items.innerHTML += `
+      <p>
+        ${item.name} - ₹${item.price}
+        <button onclick="removeItem(${index})">Remove</button>
+      </p>
+    `;
+  });
 
-        }
+  if(cart.length === 0) {
+    items.innerHTML = "Your cart is empty";
+  }
 
-      });
+  document.getElementById("total").innerText =
+    "Total: ₹" + total;
+}
 
-    });
-
-  </script>
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+</script>
 
 </body>
 </html>
