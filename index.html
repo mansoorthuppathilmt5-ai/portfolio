@@ -4,242 +4,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Football Zone</title>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f5;
-}
-
-header {
-  background: #063d27;
-  color: white;
-  padding: 20px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  color: #8cff4f;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-}
-
-.hero {
-  background: linear-gradient(120deg,#063d27,#13804d);
-  color: white;
-  text-align: center;
-  padding: 90px 20px;
-}
-
-.hero h2 {
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  margin-bottom: 25px;
-}
-
-.hero button {
-  background: #a5ff55;
-  border: none;
-  padding: 13px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.products {
-  padding: 50px 7%;
-}
-
-.products h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 25px;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 3px 12px #0001;
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-}
-
-.card h3 {
-  margin: 15px 0;
-}
-
-.price {
-  color: #087c40;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 12px;
-}
-
-.card button {
-  background: #087c40;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.cart {
-  text-align: center;
-  padding: 30px;
-  background: white;
-  margin: 30px 7%;
-  border-radius: 10px;
-}
-
-footer {
-  background: #063d27;
-  color: white;
-  text-align: center;
-  padding: 25px;
-}
-
-</style>
+<title>Football Zone | Football Store</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-  <h1>⚽ Football Zone</h1>
+  <div class="logo">⚽ FOOTBALL ZONE</div>
+
   <nav>
-    <a href="#">Home</a>
+    <a href="#home">Home</a>
     <a href="#products">Products</a>
-    <a href="#cart">Cart 🛒</a>
+    <a href="login.html">Login</a>
+    <a href="admin.html">Admin</a>
+    <a href="#cart">Cart 🛒 <span id="cartCount">0</span></a>
   </nav>
 </header>
 
-<section class="hero">
-  <h2>WELCOME TO FOOTBALL ZONE</h2>
-  <p>Your One-Stop Football Shopping Store</p>
-  <button onclick="document.getElementById('products').scrollIntoView()">
-    Shop Now
-  </button>
-</section>
-
-<section class="products" id="products">
-  <h2>Our Football Products</h2>
-
-  <div class="product-grid">
-
-    <div class="card">
-      <img src="https://placehold.co/300x200?text=Football+Jersey">
-      <h3>Football Jersey</h3>
-      <p class="price">₹799</p>
-      <button onclick="addCart('Football Jersey',799)">
-        Add to Cart
-      </button>
-    </div>
-
-    <div class="card">
-      <img src="https://placehold.co/300x200?text=Football+Boots">
-      <h3>Football Boots</h3>
-      <p class="price">₹1999</p>
-      <button onclick="addCart('Football Boots',1999)">
-        Add to Cart
-      </button>
-    </div>
-
-    <div class="card">
-      <img src="https://placehold.co/300x200?text=Football">
-      <h3>Football</h3>
-      <p class="price">₹599</p>
-      <button onclick="addCart('Football',599)">
-        Add to Cart
-      </button>
-    </div>
-
-    <div class="card">
-      <img src="https://placehold.co/300x200?text=Goalkeeper+Gloves">
-      <h3>Goalkeeper Gloves</h3>
-      <p class="price">₹899</p>
-      <button onclick="addCart('Goalkeeper Gloves',899)">
-        Add to Cart
-      </button>
-    </div>
-
+<section class="hero" id="home">
+  <div>
+    <h1>PLAY LIKE A CHAMPION</h1>
+    <p>Premium Football Products at Best Prices</p>
+    <a href="#products" class="btn">SHOP NOW</a>
   </div>
 </section>
 
-<section class="cart" id="cart">
-  <h2>🛒 Shopping Cart</h2>
-  <div id="cartItems">Your cart is empty</div>
+<section class="categories">
+  <h2>Shop Categories</h2>
+  <div class="category-list">
+    <button onclick="filterProducts('All')">All</button>
+    <button onclick="filterProducts('Jerseys')">Jerseys</button>
+    <button onclick="filterProducts('Boots')">Boots</button>
+    <button onclick="filterProducts('Footballs')">Footballs</button>
+    <button onclick="filterProducts('Accessories')">Accessories</button>
+  </div>
+</section>
+
+<section class="shop" id="products">
+  <h2>Our Products</h2>
+  <input type="text" id="search"
+    placeholder="Search football products..."
+    oninput="searchProducts()">
+
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section class="cart-section" id="cart">
+  <h2>Shopping Cart 🛒</h2>
+  <div id="cartItems"></div>
   <h3 id="total">Total: ₹0</h3>
+  <button class="btn" onclick="goCheckout()">
+    Proceed to Checkout
+  </button>
 </section>
 
 <footer>
-  <p>© 2026 Football Zone | All Rights Reserved</p>
+  <h2>⚽ FOOTBALL ZONE</h2>
+  <p>Your Ultimate Football Shopping Destination</p>
+  <p>© 2026 Football Zone. All Rights Reserved.</p>
 </footer>
 
-<script>
-let cart = [];
-
-function addCart(name, price) {
-  cart.push({name, price});
-  updateCart();
-}
-
-function updateCart() {
-  let items = document.getElementById("cartItems");
-  let total = 0;
-
-  items.innerHTML = "";
-
-  cart.forEach((item, index) => {
-    total += item.price;
-
-    items.innerHTML += `
-      <p>
-        ${item.name} - ₹${item.price}
-        <button onclick="removeItem(${index})">Remove</button>
-      </p>
-    `;
-  });
-
-  if(cart.length === 0) {
-    items.innerHTML = "Your cart is empty";
-  }
-
-  document.getElementById("total").innerText =
-    "Total: ₹" + total;
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
