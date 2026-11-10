@@ -4,72 +4,384 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoalZone | Football Jersey Store</title>
+<title>Mansoor | DevOps Engineer</title>
+<meta name="description" content="Mansoor's personal portfolio - Fresher DevOps Engineer and AWS Cloud Enthusiast">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-:root{--green:#b6ff43;--dark:#090d0b;--card:#151c18;--muted:#a0aaa3}
-body{background:var(--dark);color:white}
-header{height:auto;min-height:75px;padding:15px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;background:#090d0bf5;z-index:20;border-bottom:1px solid #26332a}
-.logo{font-size:27px;font-weight:900;color:var(--green)}
-nav{display:flex;gap:22px}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:var(--green)}
-.cart-button,.primary{background:var(--green);color:#10150e;border:0;padding:12px 20px;border-radius:5px;font-weight:bold;cursor:pointer}
-.hero{min-height:500px;display:flex;align-items:center;padding:65px 8%;background:linear-gradient(90deg,#090d0b 15%,#090d0bbd 60%,#090d0b33),url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1600') center/cover}
-.hero-content{max-width:600px}
-.tag{color:var(--green);font-size:13px;font-weight:bold;letter-spacing:3px}
-.hero h1{font-size:clamp(40px,7vw,75px);line-height:1.05;margin:18px 0}
-.hero h1 span{color:var(--green)}
-.hero p{color:#d0d5d1;line-height:1.8;margin-bottom:25px}
-section{padding:65px 7%}
-.heading{text-align:center;margin-bottom:35px}
-.heading h2{font-size:34px;margin-bottom:10px}
-.heading p{color:var(--muted)}
-.clubs{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-bottom:35px}
-.club{background:var(--card);border:1px solid #29342d;padding:20px 10px;text-align:center;border-radius:9px;cursor:pointer;color:white;transition:.2s}
-.club:hover,.club.active{border-color:var(--green);background:#203023}
-.club span{display:block;font-size:28px;margin-bottom:10px}
-.club strong{font-size:13px}
-.toolbar{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:25px}
-input,select{background:#151c18;color:white;border:1px solid #344139;padding:13px;border-radius:6px}
-#search{width:min(400px,100%)}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
-.filters button{padding:10px 17px;border:1px solid #344139;background:var(--card);color:white;border-radius:5px;cursor:pointer}
-.filters button.active,.filters button:hover{background:var(--green);color:#111;border-color:var(--green)}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:22px}
-.product{background:var(--card);border:1px solid #253129;border-radius:9px;overflow:hidden;transition:.3s}
-.product:hover{transform:translateY(-5px);border-color:var(--green)}
-.photo{height:260px;background:#e8ece8;position:relative;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.product:hover .photo img{transform:scale(1.06)}
-.label{position:absolute;top:12px;left:12px;background:var(--green);color:#10150e;font-size:11px;font-weight:bold;padding:7px 10px;border-radius:3px}
-.details{padding:17px}
-.details small{color:var(--green)}
-.details h3{font-size:17px;margin:8px 0}
-.price{font-size:21px;font-weight:bold;margin:12px 0}
-.size{width:100%;margin-bottom:12px}
-.add{width:100%;padding:12px;background:var(--green);border:0;border-radius:5px;font-weight:bold;cursor:pointer}
-.add:hover{background:#d0ff8c}
-.cart-area{background:#111813}
-.cart-box{max-width:900px;margin:auto;background:var(--card);border:1px solid #29352d;padding:25px;border-radius:10px}
-.cart-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:17px 0;border-bottom:1px solid #354039}
-.cart-row button{padding:7px 11px;cursor:pointer;border:0;border-radius:4px}
-.cart-total{text-align:right;font-size:25px;margin-top:25px;color:var(--green)}
-.checkout{margin-top:20px;width:100%;padding:15px;background:var(--green);border:0;border-radius:5px;font-weight:bold;cursor:pointer}
-.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:30px}
-.about-card{background:var(--card);padding:25px;border:1px solid #29352d;border-radius:8px}
-.about-card h3{color:var(--green);margin:12px 0}
-footer{background:#050806;padding:35px 7%;text-align:center;color:#9ca79e;line-height:2}
-footer strong{color:var(--green);font-size:23px}
-.empty{text-align:center;padding:30px;color:var(--muted)}
-@media(max-width:700px){
-header{justify-content:center}
-nav{width:100%;justify-content:center;gap:13px;flex-wrap:wrap}
-nav a{font-size:12px}
-.hero{min-height:400px}
-section{padding:45px 5%}
-.cart-row{flex-wrap:wrap}
+:root {
+    --green: #00ff99;
+    --bg: #070b09;
+    --card: #101914;
+    --text: #f4fff8;
+    --muted: #a5b5aa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    background: rgba(7,11,9,.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid #183326;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span { color: var(--green); }
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #d6e2d9;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover { color: var(--green); }
+
+.menu {
+    display: none;
+    font-size: 27px;
+    cursor: pointer;
+    color: var(--green);
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 10% 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content { max-width: 650px; }
+
+.small-title {
+    color: var(--green);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    margin: 22px 0;
+}
+
+.hero h1 span { color: var(--green); }
+
+.hero h2 {
+    font-size: 29px;
+    color: #c5d5cb;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    line-height: 1.9;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: #06130b;
+    padding: 14px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s;
+    border: 1px solid var(--green);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--green);
+}
+
+.profile {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 3px solid var(--green);
+    background: radial-gradient(circle, #163a29, #0b130e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 55px #00ff9930;
+    flex-shrink: 0;
+}
+
+.profile span {
+    font-size: 130px;
+    color: var(--green);
+    font-weight: bold;
+}
+
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px;
+}
+
+.section-title span { color: var(--green); }
+
+.about {
+    background: #0c130f;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: var(--muted);
+    line-height: 2;
+    font-size: 17px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.stat {
+    padding: 25px;
+    background: var(--card);
+    text-align: center;
+    border: 1px solid #20382b;
+    border-radius: 10px;
+}
+
+.stat h3 {
+    color: var(--green);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.stat p { color: var(--muted); }
+
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.skill, .project {
+    background: var(--card);
+    padding: 30px;
+    border: 1px solid #20382b;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.skill:hover, .project:hover {
+    transform: translateY(-8px);
+    border-color: var(--green);
+    box-shadow: 0 10px 35px #00ff9910;
+}
+
+.skill .icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.skill h3, .project h3 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.skill p, .project p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.projects-section { background: #0c130f; }
+
+.project-tag {
+    display: inline-block;
+    color: var(--green);
+    font-size: 12px;
+    border: 1px solid #276445;
+    padding: 6px 10px;
+    border-radius: 20px;
+    margin-top: 18px;
+}
+
+.education-card {
+    max-width: 650px;
+    margin: auto;
+    background: var(--card);
+    border-left: 4px solid var(--green);
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.education-card h3 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.education-card p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.contact {
+    background: #0c130f;
+    text-align: center;
+}
+
+.contact p {
+    color: var(--muted);
+    margin: 15px;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 30px auto 0;
+    background: var(--card);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #20382b;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #080f0b;
+    border: 1px solid #294b36;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-box textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-box button {
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    color: var(--green);
+}
+
+.socials a:hover { color: white; }
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #050806;
+    color: var(--muted);
+    line-height: 2;
+}
+
+footer span { color: var(--green); }
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .7s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media(max-width: 850px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 140px;
+    }
+
+    .profile {
+        width: 230px;
+        height: 230px;
+    }
+
+    .profile span { font-size: 90px; }
+
+    .buttons { justify-content: center; }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0b130e;
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav.show { display: flex; }
+    .menu { display: block; }
+    section { padding: 75px 7%; }
+}
+
+@media(max-width: 500px) {
+    .stats { grid-template-columns: 1fr; }
+    .hero h2 { font-size: 23px; }
+    .section-title { font-size: 31px; }
 }
 </style>
 </head>
@@ -77,342 +389,280 @@ section{padding:45px 5%}
 <body>
 
 <header>
-<div class="logo">⚽ GOALZONE</div>
-<nav>
-<a href="#home">HOME</a>
-<a href="#clubs">CLUBS</a>
-<a href="#products">JERSEYS</a>
-<a href="#about">ABOUT</a>
-<a href="#cart">CART</a>
-</nav>
-<button class="cart-button" onclick="goCart()">🛒 <span id="count">0</span></button>
+    <div class="logo">MANSOOR<span>.</span></div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
-<!-- HERO -->
+<!-- HOME -->
 <div class="hero" id="home">
-<div class="hero-content">
-<div class="tag">THE FOOTBALL CULTURE</div>
-<h1>WEAR YOUR <span>CLUB.</span><br>LIVE THE GAME.</h1>
-<p>Discover your favourite football club jerseys. Explore iconic home, away and third kits in one place.</p>
-<button class="primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">SHOP JERSEYS →</button>
-</div>
-</div>
 
-<!-- CLUBS -->
-<section id="clubs">
-<div class="heading">
-<h2>SHOP BY CLUB</h2>
-<p>Choose your favourite football team</p>
+    <div class="hero-content">
+        <div class="small-title">HELLO, WELCOME TO MY PORTFOLIO</div>
+
+        <h1>I'm <span>Mansoor</span></h1>
+
+        <h2>Fresher DevOps Engineer</h2>
+
+        <p>
+            Passionate about DevOps, AWS Cloud Computing,
+            Linux Administration and Automation.
+            I enjoy learning new technologies and building
+            modern, reliable cloud solutions.
+        </p>
+
+        <div class="buttons">
+            <a href="#contact" class="btn">Hire Me</a>
+            <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
+    </div>
+
+    <div class="profile">
+        <span>M</span>
+    </div>
+
 </div>
-
-<div class="clubs" id="club-list"></div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products">
-<div class="heading">
-<h2>OUR JERSEY COLLECTION</h2>
-<p>Find the kit that represents you.</p>
-</div>
-
-<div class="toolbar">
-<input id="search" placeholder="Search club or jersey..." oninput="renderProducts()">
-<select id="sort" onchange="renderProducts()">
-<option value="default">Sort by: Featured</option>
-<option value="low">Price: Low to High</option>
-<option value="high">Price: High to Low</option>
-</select>
-</div>
-
-<div class="filters">
-<button class="active" onclick="setType('All',this)">All Kits</button>
-<button onclick="setType('Home',this)">Home</button>
-<button onclick="setType('Away',this)">Away</button>
-<button onclick="setType('Third',this)">Third</button>
-</div>
-
-<div class="products" id="product-list"></div>
-</section>
-
-<!-- CART -->
-<section class="cart-area" id="cart">
-<div class="heading">
-<h2>YOUR SHOPPING CART 🛒</h2>
-<p>Review your selected jerseys</p>
-</div>
-
-<div class="cart-box">
-<div id="cart-items"></div>
-<div class="cart-total">Total: ₹<span id="total">0</span></div>
-<button class="checkout" onclick="checkout()">PROCEED TO CHECKOUT →</button>
-</div>
-</section>
 
 <!-- ABOUT -->
-<section id="about">
-<div class="heading">
-<h2>WHY GOALZONE?</h2>
-<p>Your football shopping destination</p>
-</div>
+<section class="about reveal" id="about">
 
-<div class="about-grid">
-<div class="about-card">
-<div style="font-size:30px">⚽</div>
-<h3>Top Clubs</h3>
-<p>Explore jerseys from the world's biggest football clubs.</p>
-</div>
-<div class="about-card">
-<div style="font-size:30px">👕</div>
-<h3>Multiple Kits</h3>
-<p>Discover home, away and third jersey collections.</p>
-</div>
-<div class="about-card">
-<div style="font-size:30px">📦</div>
-<h3>Easy Shopping</h3>
-<p>Choose your size and add products to your cart.</p>
-</div>
-<div class="about-card">
-<div style="font-size:30px">💚</div>
-<h3>Football Passion</h3>
-<p>For every fan who lives and breathes football.</p>
-</div>
-</div>
+    <h2 class="section-title">About <span>Me</span></h2>
+
+    <div class="about-content">
+        <p>
+            Hello! I'm Mansoor, an aspiring DevOps Engineer
+            and AWS Cloud enthusiast. I have a background
+            in Bachelor of Computer Applications (BCA).
+            I am interested in cloud infrastructure,
+            Linux systems, automation and continuous integration
+            and deployment.
+            As a fresher, I am continuously improving my
+            technical knowledge through practical learning
+            and hands-on projects. My goal is to become a
+            skilled DevOps Engineer and contribute to
+            innovative technology teams.
+        </p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <h3>Fresher</h3>
+            <p>Career Level</p>
+        </div>
+
+        <div class="stat">
+            <h3>AWS</h3>
+            <p>Cloud Interest</p>
+        </div>
+
+        <div class="stat">
+            <h3>BCA</h3>
+            <p>Education</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section class="reveal" id="skills">
+
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="icon">☁️</div>
+            <h3>AWS Cloud</h3>
+            <p>Cloud computing, AWS infrastructure and cloud services.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🐧</div>
+            <h3>Linux</h3>
+            <p>Linux commands, permissions, user management and shell scripting.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">🐳</div>
+            <h3>Docker</h3>
+            <p>Containerization concepts and application deployment.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">⚙️</div>
+            <h3>Jenkins</h3>
+            <p>CI/CD concepts, build automation and deployment pipelines.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">📦</div>
+            <h3>Git & GitHub</h3>
+            <p>Version control, repositories and source code management.</p>
+        </div>
+
+        <div class="skill">
+            <div class="icon">💻</div>
+            <h3>DevOps</h3>
+            <p>Automation, continuous integration and deployment concepts.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section reveal" id="projects">
+
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="projects-grid">
+
+        <div class="project">
+            <h3>AWS Cloud Hosting</h3>
+            <p>
+                Learning project focused on hosting a website
+                using AWS cloud infrastructure and understanding
+                cloud deployment.
+            </p>
+            <span class="project-tag">AWS Cloud</span>
+        </div>
+
+        <div class="project">
+            <h3>Jenkins CI/CD</h3>
+            <p>
+                Practice project exploring automated builds,
+                Jenkins jobs, shell scripts and CI/CD workflows.
+            </p>
+            <span class="project-tag">Jenkins</span>
+        </div>
+
+        <div class="project">
+            <h3>Linux Administration</h3>
+            <p>
+                Practical Linux exercises involving SSH,
+                cron jobs, user management, group permissions
+                and process management.
+            </p>
+            <span class="project-tag">Linux</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="reveal" id="education">
+
+    <h2 class="section-title">My <span>Education</span></h2>
+
+    <div class="education-card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>Degree in Computer Applications</p>
+        <p>Academic interest: Cloud Computing, Linux and DevOps.</p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+
+    <h2 class="section-title">Contact <span>Me</span></h2>
+
+    <p>Let's connect and explore opportunities together.</p>
+
+    <div class="contact-box">
+
+        <form id="contactForm">
+
+            <input type="text" id="name"
+                placeholder="Your Name" required>
+
+            <input type="email" id="email"
+                placeholder="Your Email" required>
+
+            <textarea id="message"
+                placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message →
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="socials">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+    </div>
+
 </section>
 
 <footer>
-<strong>⚽ GOALZONE</strong>
-<p>WEAR YOUR CLUB. LIVE THE GAME.</p>
-<p>© 2026 GoalZone. All rights reserved.</p>
+    <p>© 2026 <span>Mansoor</span>. All Rights Reserved.</p>
+    <p>Designed & Developed by Mansoor 💚</p>
 </footer>
 
 <script>
 
-// CLUBS
-const clubs=[
-"All Clubs",
-"Real Madrid",
-"Barcelona",
-"Manchester United",
-"Liverpool",
-"Arsenal",
-"Manchester City",
-"PSG",
-"Chelsea"
-];
-
-// PRODUCT DATA
-const products=[
-{id:1,club:"Real Madrid",type:"Home",name:"Real Madrid Home Jersey",price:1799,image:"https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=700",badge:"POPULAR"},
-{id:2,club:"Barcelona",type:"Home",name:"Barcelona Home Jersey",price:1699,image:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=700",badge:"TRENDING"},
-{id:3,club:"Manchester United",type:"Home",name:"Manchester United Home Jersey",price:1799,image:"https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=700",badge:"POPULAR"},
-{id:4,club:"Liverpool",type:"Home",name:"Liverpool Home Jersey",price:1699,image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=700",badge:"NEW"},
-{id:5,club:"Arsenal",type:"Home",name:"Arsenal Home Jersey",price:1699,image:"https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=700",badge:"POPULAR"},
-{id:6,club:"Manchester City",type:"Home",name:"Man City Home Jersey",price:1799,image:"https://images.unsplash.com/photo-1486286701208-1d58e9338013?w=700",badge:"NEW"},
-{id:7,club:"PSG",type:"Home",name:"PSG Home Jersey",price:1899,image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700",badge:"TRENDING"},
-{id:8,club:"Chelsea",type:"Home",name:"Chelsea Home Jersey",price:1699,image:"https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=700",badge:"NEW"},
-{id:9,club:"Real Madrid",type:"Away",name:"Real Madrid Away Jersey",price:1899,image:"https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=700",badge:"AWAY"},
-{id:10,club:"Barcelona",type:"Away",name:"Barcelona Away Jersey",price:1799,image:"https://images.unsplash.com/photo-1517649763962-0c623066013b?w=700",badge:"AWAY"},
-{id:11,club:"Liverpool",type:"Third",name:"Liverpool Third Jersey",price:1899,image:"https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=700",badge:"THIRD"},
-{id:12,club:"Arsenal",type:"Away",name:"Arsenal Away Jersey",price:1799,image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=700",badge:"AWAY"}
-];
-
-let cart=[];
-let selectedClub="All Clubs";
-let selectedType="All";
-
-// CLUB FILTERS
-function renderClubs(){
-const box=document.getElementById("club-list");
-box.innerHTML="";
-
-clubs.forEach((club,i)=>{
-const div=document.createElement("button");
-div.className="club"+(selectedClub===club?" active":"");
-div.innerHTML=`<span>${i===0?"⚽":"🏆"}</span><strong>${club}</strong>`;
-div.onclick=()=>{
-selectedClub=club;
-renderClubs();
-renderProducts();
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-};
-box.appendChild(div);
-});
+// Mobile navigation
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
 }
 
-// PRODUCT DISPLAY
-function renderProducts(){
-const list=document.getElementById("product-list");
-const query=document.getElementById("search").value.toLowerCase();
-let data=products.filter(p=>
-(selectedClub==="All Clubs"||p.club===selectedClub)&&
-(selectedType==="All"||p.type===selectedType)&&
-(p.name.toLowerCase().includes(query)||p.club.toLowerCase().includes(query))
-);
-
-const sort=document.getElementById("sort").value;
-if(sort==="low")data.sort((a,b)=>a.price-b.price);
-if(sort==="high")data.sort((a,b)=>b.price-a.price);
-
-list.innerHTML="";
-
-if(!data.length){
-list.innerHTML='<div class="empty">No jerseys found. Try another search.</div>';
-return;
-}
-
-data.forEach(p=>{
-const card=document.createElement("div");
-card.className="product";
-
-const photo=document.createElement("div");
-photo.className="photo";
-
-const img=document.createElement("img");
-img.src=p.image;
-img.alt=p.club+" jersey";
-img.loading="lazy";
-img.onerror=()=>{img.src="https://placehold.co/600x600/151c18/b6ff43?text=Jersey+Photo"};
-photo.appendChild(img);
-
-const badge=document.createElement("span");
-badge.className="label";
-badge.textContent=p.badge;
-photo.appendChild(badge);
-
-const details=document.createElement("div");
-details.className="details";
-details.innerHTML=`
-<small>${p.club.toUpperCase()} • ${p.type.toUpperCase()} KIT</small>
-<h3>${p.name}</h3>
-<div class="price">₹${p.price.toLocaleString("en-IN")}</div>
-<select class="size" aria-label="Select jersey size" id="size-${p.id}">
-<option value="">Select Size</option>
-<option>S</option><option>M</option><option>L</option>
-<option>XL</option><option>XXL</option>
-</select>
-<button class="add" onclick="addCart(${p.id})">ADD TO CART +</button>
-`;
-
-card.append(photo,details);
-list.appendChild(card);
-});
-}
-
-// KIT FILTER
-function setType(type,button){
-selectedType=type;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-button.classList.add("active");
-renderProducts();
-}
-
-// ADD TO CART
-function addCart(id){
-const p=products.find(x=>x.id===id);
-const size=document.getElementById("size-"+id).value;
-
-if(!size){
-alert("Please select a jersey size!");
-return;
-}
-
-const existing=cart.find(x=>x.id===id&&x.size===size);
-
-if(existing)existing.qty++;
-else cart.push({...p,size,qty:1});
-
-updateCart();
-alert(p.name+" added to cart!");
-}
-
-// UPDATE CART
-function updateCart(){
-const box=document.getElementById("cart-items");
-box.innerHTML="";
-let total=0;
-let count=0;
-
-if(cart.length===0){
-box.innerHTML='<div class="empty">Your cart is empty. Start shopping!</div>';
-}
-
-cart.forEach(item=>{
-total+=item.price*item.qty;
-count+=item.qty;
-
-const row=document.createElement("div");
-row.className="cart-row";
-
-const name=document.createElement("div");
-name.innerHTML=`<strong>${item.name}</strong><br><small>Size: ${item.size} | ₹${item.price.toLocaleString("en-IN")}</small>`;
-
-const controls=document.createElement("div");
-const minus=document.createElement("button");
-minus.textContent="−";
-minus.onclick=()=>changeQty(item.id,item.size,-1);
-
-const qty=document.createElement("span");
-qty.textContent=" "+item.qty+" ";
-
-const plus=document.createElement("button");
-plus.textContent="+";
-plus.onclick=()=>changeQty(item.id,item.size,1);
-
-const remove=document.createElement("button");
-remove.textContent="🗑️";
-remove.onclick=()=>removeCart(item.id,item.size);
-
-controls.append(minus,qty,plus,remove);
-row.append(name,controls);
-box.appendChild(row);
+// Close mobile navigation after clicking a link
+document.querySelectorAll("#navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("show");
+    });
 });
 
-document.getElementById("total").textContent=total.toLocaleString("en-IN");
-document.getElementById("count").textContent=count;
-}
+// Scroll animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+}, { threshold: 0.12 });
 
-// CHANGE QUANTITY
-function changeQty(id,size,amount){
-const item=cart.find(x=>x.id===id&&x.size===size);
-if(!item)return;
-item.qty+=amount;
-if(item.qty<=0)removeCart(id,size);
-else updateCart();
-}
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
 
-// REMOVE
-function removeCart(id,size){
-cart=cart.filter(x=>!(x.id===id&&x.size===size));
-updateCart();
-}
+// Contact form opens user's email application
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-// CART NAVIGATION
-function goCart(){
-document.getElementById("cart").scrollIntoView({behavior:"smooth"});
-}
+    const yourEmail = "your-email@example.com";
 
-// CHECKOUT DEMO
-function checkout(){
-if(cart.length===0){
-alert("Your cart is empty!");
-return;
-}
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-const total=cart.reduce((s,p)=>s+p.price*p.qty,0);
+    const subject = encodeURIComponent("Portfolio Contact from " + name);
+    const body = encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+    );
 
-const order=cart.map(p=>
-p.name+" | Size: "+p.size+" | Qty: "+p.qty
-).join("\n");
-
-alert("GOALZONE ORDER SUMMARY\n\n"+order+
-"\n\nTotal: ₹"+total.toLocaleString("en-IN")+
-"\n\nThis is a demo checkout. No real order or payment has been placed.");
-}
-
-renderClubs();
-renderProducts();
-updateCart();
+    window.location.href =
+        "mailto:" + yourEmail +
+        "?subject=" + subject +
+        "&body=" + body;
+});
 
 </script>
+
 </body>
 </html>
